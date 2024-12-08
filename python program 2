@@ -1,0 +1,20 @@
+def malloc(size):
+    return [None] * size  # Allocate a list of specified size, uninitialized
+def calloc(size):
+    return [0] * size  # Allocate a list of specified size, initialized to 0
+def print_memory(label, memory):
+    print(f"{label}: {memory}")
+def main():
+    malloc_size = 5
+    malloc_memory = malloc(malloc_size)
+    print_memory("Malloc-like allocation", malloc_memory)
+    calloc_size = 5
+    calloc_memory = calloc(calloc_size)
+    print_memory("Calloc-like allocation", calloc_memory)
+    malloc_memory[0] = 42
+    malloc_memory[1] = 25
+    print_memory("Updated Malloc-like memory", malloc_memory)
+    calloc_memory[2] = 7
+    print_memory("Updated Calloc-like memory", calloc_memory)
+if _name_ == "_main_":
+    main()
